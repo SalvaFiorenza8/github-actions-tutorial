@@ -6,11 +6,13 @@ help: ## Display this help screen
 
 .PHONY: deps
 deps: ## Install dependencies
-	@echo "install  deps"
+  @echo "install  deps"
+  npm install -g markdownlint-cli
 
 .PHONY: test
 test: ## Unit test our code
-		@echo "testing code"
+  @echo "testing code"
+  markdownlint -f 'static_hugo_site/content/**/*.md'
 
 .PHONY: build
 build: ## Builds our code 
